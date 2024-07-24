@@ -1,0 +1,21 @@
+body {
+  font-family: Roboto, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  color: #ac2ba1;
+}
+.container {
+  text-align: center;
+  border: 6px solid #ac2ba1;
+  padding: 20px;
+  border-radius: 6px;
+  background-color: #f0c2ec;
+}
+label,
+input {
+  margin: 10px 0;
+  display: block;
+  background-color: #f0c2ec;
+}
