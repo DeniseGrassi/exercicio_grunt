@@ -1,13 +1,11 @@
-const { option } = require("grunt");
-
-module.exports = function (grunt) { 
+module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
 
         less: {
             development: {
                 files: {
-                    'dev/styles/main.css':'src/styles/main.less'
+                    'dev/styles/main.css': 'src/styles/main.less'
                 }
             },
             production: {
@@ -22,20 +20,18 @@ module.exports = function (grunt) {
 
         uglify: {
             target: {
-                files: { 
+                files: {
                     'dist/scripts/main.min.js': 'src/scripts/main.js'
                 }
             }
         }
-    })
+    });
 
-//carregamento dos plugins !
+    // Carregamento dos plugins
     grunt.loadNpmTasks('grunt-contrib-less');
-
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
-    grunt.registerTask('default', ['less']);
-    grunt.registerTask('build', ['less:production', 'uglify']);   
-    
-
-}
+    // Definição das tarefas
+    grunt.registerTask('default', ['less:development', 'uglify']);
+    grunt.registerTask('build', ['less', 'uglify']);
+};
